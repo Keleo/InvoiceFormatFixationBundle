@@ -1,0 +1,9 @@
+parameters:
+    treatPhpDocTypesAsCertain: false
+    inferPrivatePropertyTypeFromConstructor: true
+    excludes_analyse:
+        - vendor/
+    ignoreErrors:
+        - '#Method (.*) has no return typehint specified.#'
+    checkMissingIterableValueType: false
+

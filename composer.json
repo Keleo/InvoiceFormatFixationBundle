@@ -1,0 +1,61 @@
+{
+    "name": "keleo/invoice-format-fixation-plugin",
+    "description": "Kimai extension to configure a language, which will be used to format money, date and time values in invoices",
+    "homepage": "https://www.kimai.org/store/invoice-format-fixation-bundle.html",
+    "type": "kimai-plugin",
+    "version": "0.1",
+    "require": {
+        "kimai/kimai2-composer": "^0.1"
+    },
+    "keywords": [
+        "kimai",
+        "kimai-plugin"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kevin Papst",
+            "email": "info@keleo.de",
+            "homepage": "https://www.keleo.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "KimaiPlugin\\InvoiceFormatFixationBundle\\": ""
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.2.9"
+        },
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "extra": {
+        "kimai": {
+            "require": "1.11",
+            "version": "0.1",
+            "name": "Invoice format fixation"
+        }
+    },
+    "scripts": {
+        "codestyle": "php-cs-fixer fix --dry-run --verbose --show-progress=none",
+        "codestyle-fix": "php-cs-fixer fix",
+        "codestyle-check": "vendor/bin/php-cs-fixer fix --dry-run --verbose --config=.php_cs.dist --using-cache=no --show-progress=none --format=checkstyle",
+        "phpstan": "vendor/bin/phpstan analyse . -c phpstan.neon --level=7",
+        "linting": [
+            "composer validate",
+            "@codestyle-check",
+            "@phpstan"
+        ]
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.15",
+        "phpstan/phpstan": "^0.12.19",
+        "kevinpapst/kimai2": "dev-master",
+        "symfony/console": "^4.0",
+        "symfony/event-dispatcher": "^4.0"
+    }
+}
