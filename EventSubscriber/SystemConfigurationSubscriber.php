@@ -16,7 +16,7 @@ use App\Form\Model\SystemConfiguration as SystemConfigurationModel;
 use App\Form\Type\LanguageType;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-class SystemConfigurationSubscriber implements EventSubscriberInterface
+final class SystemConfigurationSubscriber implements EventSubscriberInterface
 {
     public static function getSubscribedEvents()
     {
@@ -31,6 +31,7 @@ class SystemConfigurationSubscriber implements EventSubscriberInterface
             if ($configuration->getSection() !== SystemConfigurationModel::SECTION_FORM_INVOICE) {
                 continue;
             }
+
             $configuration->addConfiguration(
                 (new Configuration())
                     ->setName('invoice.formatter_language')
@@ -40,6 +41,8 @@ class SystemConfigurationSubscriber implements EventSubscriberInterface
                     ->setRequired(false)
                     ->setType(LanguageType::class)
             );
+
+            return;
         }
     }
 }

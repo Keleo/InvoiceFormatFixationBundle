@@ -11,6 +11,7 @@
 namespace KimaiPlugin\InvoiceFormatFixationBundle\DependencyInjection;
 
 use App\Plugin\AbstractPluginExtension;
+use Exception;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader;
@@ -20,7 +21,7 @@ class InvoiceFormatFixationExtension extends AbstractPluginExtension
     /**
      * @param array $configs
      * @param ContainerBuilder $container
-     * @throws \Exception
+     * @throws Exception
      */
     public function load(array $configs, ContainerBuilder $container)
     {

@@ -16,7 +16,7 @@ use App\Event\InvoicePreRenderEvent;
 use App\Invoice\DefaultInvoiceFormatter;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-class InvoicePreRenderSubscriber implements EventSubscriberInterface
+final class InvoicePreRenderSubscriber implements EventSubscriberInterface
 {
     /**
      * @var LanguageFormattings
