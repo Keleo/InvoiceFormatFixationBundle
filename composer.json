@@ -3,10 +3,7 @@
     "description": "Kimai extension to configure a language, which will be used to format money, date and time values in invoices",
     "homepage": "https://www.kimai.org/store/invoice-format-fixation-bundle.html",
     "type": "kimai-plugin",
-    "version": "0.1",
-    "require": {
-        "kimai/kimai2-composer": "^0.1"
-    },
+    "version": "0.2",
     "keywords": [
         "kimai",
         "kimai-plugin"
@@ -36,7 +33,7 @@
     "extra": {
         "kimai": {
             "require": "1.11",
-            "version": "0.1",
+            "version": "0.2",
             "name": "Invoice format fixation"
         }
     },
@@ -54,7 +51,7 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.15",
         "phpstan/phpstan": "^0.12.19",
-        "kevinpapst/kimai2": "dev-master",
+        "kevinpapst/kimai2": "^1.11",
         "symfony/console": "^4.0",
         "symfony/event-dispatcher": "^4.0"
     }

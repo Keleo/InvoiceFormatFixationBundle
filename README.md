@@ -27,4 +27,4 @@ cd /kimai/
 bin/console kimai:reload -n
 ```
 
-Change to the invoice page and open the configuration modla (via the gear icon). 
+Change to the invoice page and open the configuration mode (via the gear icon). 
