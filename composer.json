@@ -22,7 +22,10 @@
         }
     },
     "config": {
-        "allow-plugins": {},
+        "allow-plugins": {
+            "composer/package-versions-deprecated": false,
+            "symfony/flex": false
+        },
         "platform": {
             "php": "7.3"
         },
