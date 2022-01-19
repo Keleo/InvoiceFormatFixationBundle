@@ -30,7 +30,7 @@ final class InvoicePreRenderSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function configureFormatter(InvoicePreRenderEvent $event)
+    public function configureFormatter(InvoicePreRenderEvent $event): void
     {
         $language = $this->configuration->find('invoice.formatter_language');
 
