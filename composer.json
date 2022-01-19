@@ -37,8 +37,8 @@
         }
     },
     "scripts": {
-        "codestyle": "php-cs-fixer fix --dry-run --verbose --show-progress=none",
-        "codestyle-fix": "php-cs-fixer fix",
+        "codestyle": "vendor/bin/php-cs-fixer fix --dry-run --verbose --show-progress=none",
+        "codestyle-fix": "vendor/bin/php-cs-fixer fix",
         "codestyle-check": "vendor/bin/php-cs-fixer fix --dry-run --verbose --using-cache=no --show-progress=none --format=checkstyle",
         "phpstan": "vendor/bin/phpstan analyse . -c phpstan.neon --level=7",
         "linting": [
