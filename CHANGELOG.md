@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.2 (unreleased) 
+## 0.2
 
 Compatible with Kimai 1.11
 
