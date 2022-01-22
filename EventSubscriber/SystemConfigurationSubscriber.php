@@ -12,23 +12,22 @@ namespace KimaiPlugin\InvoiceFormatFixationBundle\EventSubscriber;
 
 use App\Event\SystemConfigurationEvent;
 use App\Form\Model\Configuration;
-use App\Form\Model\SystemConfiguration as SystemConfigurationModel;
 use App\Form\Type\LanguageType;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class SystemConfigurationSubscriber implements EventSubscriberInterface
 {
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return [
             SystemConfigurationEvent::class => ['onSystemConfiguration', 100],
         ];
     }
 
-    public function onSystemConfiguration(SystemConfigurationEvent $event)
+    public function onSystemConfiguration(SystemConfigurationEvent $event): void
     {
         foreach ($event->getConfigurations() as $configuration) {
-            if ($configuration->getSection() !== SystemConfigurationModel::SECTION_FORM_INVOICE) {
+            if ($configuration->getSection() !== 'invoice') {
                 continue;
             }
 

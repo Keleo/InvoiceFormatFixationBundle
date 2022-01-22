@@ -3,7 +3,7 @@
     "description": "Kimai extension to configure a language, which will be used to format money, date and time values in invoices",
     "homepage": "https://www.kimai.org/store/invoice-format-fixation-bundle.html",
     "type": "kimai-plugin",
-    "version": "0.2",
+    "version": "1.0",
     "keywords": [
         "kimai",
         "kimai-plugin"
@@ -22,8 +22,12 @@
         }
     },
     "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": false,
+            "symfony/flex": false
+        },
         "platform": {
-            "php": "7.2.9"
+            "php": "7.3"
         },
         "preferred-install": {
             "*": "dist"
@@ -32,26 +36,26 @@
     },
     "extra": {
         "kimai": {
-            "require": "1.11",
-            "version": "0.2",
+            "require": "1.17",
             "name": "Invoice format fixation"
         }
     },
     "scripts": {
-        "codestyle": "php-cs-fixer fix --dry-run --verbose --show-progress=none",
-        "codestyle-fix": "php-cs-fixer fix",
-        "codestyle-check": "vendor/bin/php-cs-fixer fix --dry-run --verbose --config=.php_cs.dist --using-cache=no --show-progress=none --format=checkstyle",
+        "codestyle": "vendor/bin/php-cs-fixer fix --dry-run --verbose --show-progress=none",
+        "codestyle-fix": "vendor/bin/php-cs-fixer fix",
+        "codestyle-check": "vendor/bin/php-cs-fixer fix --dry-run --verbose --using-cache=no --show-progress=none --format=checkstyle",
         "phpstan": "vendor/bin/phpstan analyse . -c phpstan.neon --level=7",
         "linting": [
-            "composer validate",
+            "composer validate --strict --no-check-version",
             "@codestyle-check",
             "@phpstan"
         ]
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.15",
-        "phpstan/phpstan": "^0.12.19",
-        "kevinpapst/kimai2": "^1.11",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpstan/phpstan": "^1.0",
+        "phpstan/phpstan-symfony": "^1.0",
+        "kevinpapst/kimai2": "dev-master",
         "symfony/console": "^4.0",
         "symfony/event-dispatcher": "^4.0"
     }
