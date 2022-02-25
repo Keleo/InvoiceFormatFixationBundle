@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-    <file source-language="en" target-language="de" datatype="plaintext" original="system-configuration.en.xlf">
-        <body>
-            <trans-unit id="label.invoice.formatter_language">
-                <source>label.invoice.formatter_language</source>
-                <target>Sprache für Formatierungen</target>
-            </trans-unit>
-            <trans-unit id="help.invoice.formatter_language">
-                <source>help.invoice.formatter_language</source>
-                <target>Die gewählte Sprache wird genutzt um Datums-, Zeit- und Geldwerte zu formatieren. Die Sprache der Rechnungsvorlage wird danach nur noch für Übersetzungen verwendet.</target>
-            </trans-unit>
-        </body>
-    </file>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="de" datatype="plaintext" original="system-configuration.en.xlf">
+    <body>
+      <trans-unit id="iEnbw47" resname="label.invoice.formatter_language">
+        <source>label.invoice.formatter_language</source>
+        <target>Sprache für Formatierungen</target>
+      </trans-unit>
+      <trans-unit id="QysT_tz" resname="help.invoice.formatter_language">
+        <source>help.invoice.formatter_language</source>
+        <target>Die gewählte Sprache wird genutzt um Datums-, Zeit- und Geldwerte zu formatieren. Die Sprache der Rechnungsvorlage wird danach nur noch für Übersetzungen verwendet.</target>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>
