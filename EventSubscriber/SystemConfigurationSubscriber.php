@@ -33,8 +33,7 @@ final class SystemConfigurationSubscriber implements EventSubscriberInterface
             }
 
             $configuration->addConfiguration(
-                (new Configuration())
-                    ->setName('invoice.formatter_language')
+                (new Configuration('invoice.formatter_language'))
                     ->setLabel('invoice.formatter_language')
                     ->setTranslationDomain('system-configuration')
                     ->setOptions(['help' => 'help.invoice.formatter_language'])
