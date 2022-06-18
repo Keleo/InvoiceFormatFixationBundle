@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the "Invoice format fixation" plugin for Kimai 2.
+ * This file is part of the "Invoice format fixation bundle" for Kimai.
  * All rights reserved by Kevin Papst (www.kevinpapst.de).
  *
  * For the full copyright and license information, please view the LICENSE
@@ -12,7 +12,6 @@ namespace KimaiPlugin\InvoiceFormatFixationBundle\EventSubscriber;
 
 use App\Event\SystemConfigurationEvent;
 use App\Form\Model\Configuration;
-use App\Form\Model\SystemConfiguration as SystemConfigurationModel;
 use App\Form\Type\LanguageType;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -25,10 +24,10 @@ final class SystemConfigurationSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function onSystemConfiguration(SystemConfigurationEvent $event)
+    public function onSystemConfiguration(SystemConfigurationEvent $event): void
     {
         foreach ($event->getConfigurations() as $configuration) {
-            if ($configuration->getSection() !== SystemConfigurationModel::SECTION_FORM_INVOICE) {
+            if ($configuration->getSection() !== 'invoice') {
                 continue;
             }
 
@@ -41,7 +40,7 @@ final class SystemConfigurationSubscriber implements EventSubscriberInterface
                     ->setType(LanguageType::class)
             );
 
-            return;
+            break;
         }
     }
 }

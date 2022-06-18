@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the "Invoice format fixation" plugin for Kimai 2.
+ * This file is part of the "Invoice format fixation bundle" for Kimai.
  * All rights reserved by Kevin Papst (www.kevinpapst.de).
  *
  * For the full copyright and license information, please view the LICENSE
@@ -18,19 +18,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class InvoicePreRenderSubscriber implements EventSubscriberInterface
 {
-    /**
-     * @var LanguageFormattings
-     */
-    private $formatter;
-    /**
-     * @var SystemConfiguration
-     */
-    private $configuration;
-
-    public function __construct(LanguageFormattings $formatter, SystemConfiguration $configuration)
+    public function __construct(private LanguageFormattings $formatter, private SystemConfiguration $configuration)
     {
-        $this->formatter = $formatter;
-        $this->configuration = $configuration;
     }
 
     public static function getSubscribedEvents(): array
@@ -40,11 +29,11 @@ final class InvoicePreRenderSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function configureFormatter(InvoicePreRenderEvent $event)
+    public function configureFormatter(InvoicePreRenderEvent $event): void
     {
         $language = $this->configuration->find('invoice.formatter_language');
 
-        if (empty($language)) {
+        if (empty($language) || !\is_string($language)) {
             return;
         }
 
