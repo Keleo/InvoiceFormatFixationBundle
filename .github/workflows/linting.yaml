@@ -20,6 +20,6 @@ jobs:
                     coverage: none
                     extensions: intl
             -   run: composer install --no-progress
-            -   run: composer validate
+            -   run: composer validate --strict --no-check-version
             -   run: composer codestyle-check
             -   run: composer phpstan
