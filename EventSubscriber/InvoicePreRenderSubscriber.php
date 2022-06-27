@@ -10,7 +10,7 @@
 
 namespace KimaiPlugin\InvoiceFormatFixationBundle\EventSubscriber;
 
-use App\Configuration\LanguageFormattings;
+use App\Configuration\LocaleService;
 use App\Configuration\SystemConfiguration;
 use App\Event\InvoicePreRenderEvent;
 use App\Invoice\DefaultInvoiceFormatter;
@@ -18,7 +18,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 final class InvoicePreRenderSubscriber implements EventSubscriberInterface
 {
-    public function __construct(private LanguageFormattings $formatter, private SystemConfiguration $configuration)
+    public function __construct(private LocaleService $formatter, private SystemConfiguration $configuration)
     {
     }
 
