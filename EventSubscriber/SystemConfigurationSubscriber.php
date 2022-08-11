@@ -31,14 +31,17 @@ final class SystemConfigurationSubscriber implements EventSubscriberInterface
                 continue;
             }
 
-            $configuration->addConfiguration(
-                (new Configuration('invoice.formatter_language'))
-                    ->setLabel('invoice.formatter_language')
-                    ->setTranslationDomain('system-configuration')
-                    ->setOptions(['help' => 'help.invoice.formatter_language'])
-                    ->setRequired(false)
-                    ->setType(LanguageType::class)
-            );
+            // could be added through the InvoiceBundle as well
+            if ($configuration->getConfigurationByName('invoice.formatter_language') === null) {
+                $configuration->addConfiguration(
+                    (new Configuration('invoice.formatter_language'))
+                        ->setLabel('invoice.formatter_language')
+                        ->setTranslationDomain('system-configuration')
+                        ->setOptions(['help' => 'help.invoice.formatter_language'])
+                        ->setRequired(false)
+                        ->setType(LanguageType::class)
+                );
+            }
 
             break;
         }
