@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="hr" datatype="plaintext" original="system-configuration.en.xlf">
+    <body>
+      <trans-unit id="iEnbw47" resname="label.invoice.formatter_language">
+        <source>label.invoice.formatter_language</source>
+        <target>Jezik za formatiranje</target>
+      </trans-unit>
+      <trans-unit id="QysT_tz" resname="help.invoice.formatter_language">
+        <source>help.invoice.formatter_language</source>
+        <target>Odabrani jezik se koristi za formatiranje datuma, vremena i novčanih iznosa. Jezik predloška računa će se koristit samo za prijevode.</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
