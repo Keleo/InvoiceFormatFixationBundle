@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the "Invoice format fixation" plugin for Kimai 2.
+ * This file is part of the "Invoice format fixation bundle" for Kimai.
  * All rights reserved by Kevin Papst (www.kevinpapst.de).
  *
  * For the full copyright and license information, please view the LICENSE
@@ -31,17 +31,19 @@ final class SystemConfigurationSubscriber implements EventSubscriberInterface
                 continue;
             }
 
-            $configuration->addConfiguration(
-                (new Configuration())
-                    ->setName('invoice.formatter_language')
-                    ->setLabel('invoice.formatter_language')
-                    ->setTranslationDomain('system-configuration')
-                    ->setOptions(['help' => 'help.invoice.formatter_language'])
-                    ->setRequired(false)
-                    ->setType(LanguageType::class)
-            );
+            // could be added through the InvoiceBundle as well
+            if ($configuration->getConfigurationByName('invoice.formatter_language') === null) {
+                $configuration->addConfiguration(
+                    (new Configuration('invoice.formatter_language'))
+                        ->setLabel('invoice.formatter_language')
+                        ->setTranslationDomain('system-configuration')
+                        ->setOptions(['help' => 'help.invoice.formatter_language'])
+                        ->setRequired(false)
+                        ->setType(LanguageType::class)
+                );
+            }
 
-            return;
+            break;
         }
     }
 }

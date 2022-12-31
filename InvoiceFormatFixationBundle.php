@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the "Invoice format fixation" plugin for Kimai 2.
+ * This file is part of the "Invoice format fixation bundle" for Kimai.
  * All rights reserved by Kevin Papst (www.kevinpapst.de).
  *
  * For the full copyright and license information, please view the LICENSE
