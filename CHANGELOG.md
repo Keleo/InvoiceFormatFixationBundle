@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.1
+
+Compatible with Kimai 1.17
+
+- Added croatian translation - thanks @milotype
+- Fixed code styles
+
 ## 1.0
 
 Compatible with Kimai 1.17
