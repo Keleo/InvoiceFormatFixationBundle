@@ -34,7 +34,7 @@ final class InvoicePreRenderSubscriber implements EventSubscriberInterface
     {
         $language = $this->configuration->find('invoice.formatter_language');
 
-        if (empty($language) || !is_string($language)) {
+        if (empty($language) || !\is_string($language)) {
             return;
         }
 
