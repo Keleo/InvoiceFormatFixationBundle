@@ -1,5 +1,5 @@
 
-# Kimai 2 - Invoice format fixation
+# Kimai - Invoice format fixation
 
 [![CI Status](https://github.com/Keleo/InvoiceFormatFixationBundle/workflows/CI/badge.svg)](https://github.com/Keleo/InvoiceFormatFixationBundle/actions)
 
@@ -12,19 +12,32 @@ Adds a new system-configuration to the invoice section, which can be reached by 
 
 ![Screenshot](screenshot.png)
 
-
 ## Installation
 
-First clone it to your Kimai installation `plugins` directory:
-```
-cd /kimai/var/plugins/
-git clone https://github.com/Keleo/InvoiceFormatFixationBundle.git
+This plugin is compatible with the following Kimai releases:
+
+| Bundle version | Minimum Kimai version |
+|----------------|-----------------------|
+| 2.0            | 2.0.0                 |
+| 1.0 - 1.1      | 1.17                  |
+| 0.1 - 0.2      | 1.11                  |
+
+You find the most notable changes between the versions in the file [CHANGELOG.md](CHANGELOG.md).
+
+Download and extract the [compatible release](https://github.com/Keleo/InvoiceFormatFixationBundle/releases).
+
+The file structure needs to look like this afterwards:
+
+```bash
+var/plugins/
+├── InvoiceFormatFixationBundle
+│   ├── InvoiceFormatFixationBundle.php
+|   └ ... more files and directories follow here ... 
 ```
 
-Then rebuild the cache: 
-```
-cd /kimai/
-bin/console kimai:reload -n
+Then rebuild the cache:
+```bash
+bin/console kimai:reload --env=prod
 ```
 
-Change to the invoice page and open the configuration mode (via the gear icon). 
+Finally, change to the invoice page and open the configuration mode (via the gear icon). 
