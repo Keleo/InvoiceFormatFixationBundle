@@ -1,7 +1,7 @@
 {
     "name": "keleo/invoice-format-fixation-plugin",
     "description": "Kimai extension to configure a language, which will be used to format money, date and time values in invoices",
-    "homepage": "https://www.kimai.org/store/invoice-format-fixation-bundle.html",
+    "homepage": "https://www.kimai.org/store/keleo-invoice-format-fixation-bundle.html",
     "type": "kimai-plugin",
     "version": "1.1",
     "keywords": [
