@@ -3,7 +3,7 @@
     "description": "Kimai extension to configure a language, which will be used to format money, date and time values in invoices",
     "homepage": "https://www.kimai.org/store/invoice-format-fixation-bundle.html",
     "type": "kimai-plugin",
-    "version": "2.0",
+    "version": "2.0.1",
     "keywords": [
         "kimai",
         "kimai-plugin"
@@ -12,7 +12,7 @@
     "authors": [
         {
             "name": "Kevin Papst",
-            "homepage": "https://www.keleo.de"
+            "homepage": "https://www.kevinpapst.de"
         }
     ],
     "autoload": {
